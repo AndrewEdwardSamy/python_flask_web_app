@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="auto">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> {{title}}</title>
+  <!-- <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="{{url_for('static', filename='assets/dist/css/bootstrap.min.css')}}" />
+  <!-- <link rel="stylesheet" href="/static/css/styles.css" /> -->
+  <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}" />
+</head>
+
+
+<body>
+
+<header class="navbar">
+    <div class="navbar__brand">
+      <img class="navbar__logo" src="/static/images/logo.jpg" alt="Archangel Michael logo" />
+    </div>
+    <ul class="navbar__navigation">
+        <li class="navbar__navigation-item">
+            <a href="{{ url_for('welcome') }}" class="navbar__link"> Archangel Michael</a>
+        </li>
+      <li class="navbar__navigation-item">
+        <a href="{{ url_for('add_servant') }}" class="navbar__link">Add Servant</a>
+      </li>
+      <li class="navbar__navigation-item">
+        <a href="{{ url_for('all_servants') }}" class="navbar__link">All Servants</a>
+      </li>
+    </ul>
+</header>
+
+
+{% block content %}
+    {# Template inserted here #}
+{% endblock %}
+
+
+
+<footer class="footer">
+    <div class="footer__content">
+      <section class="left">
+        <a class="footer__item">Made by Andrew Edward</a>
+        <a class="footer__item">Check out my other projects</a>
+      </section>
+      <section class="right">
+        <div class="footer__column">
+          <a class="footer__item">Recent</a>
+          <a class="footer__item">Calendar</a>
+        </div>
+        <div class="footer__column">
+          <a class="footer__item" href="#">About</a>
+          <a class="footer__item">How this was made</a>
+        </div>
+      </section>
+    </div>
+</footer>
+
+</body>
+</html>

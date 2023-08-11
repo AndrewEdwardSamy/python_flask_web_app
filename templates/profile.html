@@ -1,0 +1,129 @@
+
+
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<main class="container py-5">
+    <h1>{{servant['fname'] }} {{servant['lname']}}</h1>
+    <hr class="my-5">
+
+    <!-- <article class="blog-post"> -->
+    <table class="table table-striped">
+        <thead>
+            <tr>
+            <th> </th>
+            <th> </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><b>Identity:</b></td>
+                <td>{{servant['identity']}}</td>
+            </tr>
+            <tr>
+                <td><b>Address:</b></td>
+                <td>{{servant['address']}}</td>
+            </tr>
+            <tr>
+                <td><b>Block:</b></td>
+                <td>{{servant['block']}}</td>
+            </tr>
+            <tr>
+                <td><b>Phone:</b></td>
+                <td>{{servant['phone']}}</td>
+            </tr>
+            <tr>
+                <td><b>What's:</b></td>
+                <td>{{servant['whats']}}</td>
+            </tr>
+            <tr>
+                <td><b>Father of confession:</b></td>
+                <td>{{servant['father_of_confession']}}</td>
+            </tr>
+            <tr>
+                <td><b>Graduation year of servant preparation:</b></td>
+                <td>{{servant['pre_graduation_year']}}</td>
+            </tr>
+            <tr>
+                <td><b>Grade of servant preparation:</b></td>
+                <td>{{servant['pre_grade']}}</td>
+            </tr>
+            <tr>
+                <td><b>Church of servant preparation:</b></td>
+                <td>{{servant['pre_church']}}</td>
+            </tr>
+            <tr>
+                <td><b>Membership:</b></td>
+                <td>{{servant['membership']}}</td>
+            </tr>
+            <tr>
+                <td><b>DISC:</b></td>
+                <td>{% for x in servant['disc'] %} {{ x }} <br> {% endfor %}</td>
+            </tr>
+            <tr>
+                <td><b>Intelligence type:</b></td>
+                <td>{% for x in servant['intelligence_type'] %} {{ x }} <br> {% endfor %}</td>
+            </tr>
+            <tr>
+                <td><b>Skill:</b></td>
+                <td>{% for x in servant['skill'] %} {{ x }} <br> {% endfor %}</td>
+            </tr>
+            <tr>
+                <td><b>Course:</b></td>
+                <td>{{servant['course']}}</td>
+            </tr>
+            <tr>
+                <td><b>Note:</b></td>
+                <td>{{servant['note']}}</td>
+            </tr>
+        </tbody>
+        </table>
+    <!-- </article> -->
+
+
+    <!-- <p class="lead">{{servant['identity']}}</p> -->
+<!--     
+        <ul>
+            <li><p><b>Identity:</b> {{servant['identity']}}</p></li>
+            <li><p><b>Address:</b> {{servant['address']}}</p></li>
+            <li><p><b>Block:</b> {{servant['block']}}</p></li>
+            <li><p><b>Phone:</b> {{servant['phone']}}</p></li>
+            <li><p><b>What's:</b> {{servant['whats']}}</p></li>
+            <li><p><b>Father of confession:</b> {{servant['father_of_confession']}}</p></li>
+            <li><p><b>Graduation year of servant preparation:</b> {{servant['pre_graduation_year']}}</p></li>
+            <li><p><b>Grade of servant preparation:</b> {{servant['pre_grade']}}</p></li>
+            <li><p><b>Church of servant preparation:</b> {{servant['pre_church']}}</p></li>
+            <li><p><b>Membership:</b> {{servant['membership']}}</p></li>
+            <li><p><b>DISC:</b> {% for x in servant['disc'] %}<ul><li>{{ x }}</li></ul>{% endfor %} </p></li>
+            <li><p><b>Intelligence type:</b> {% for x in servant['intelligence_type'] %}<ul><li>{{ x }}</li></ul>{% endfor %} </p></li>
+            <li><p><b>Skill:</b> {% for x in servant['skill'] %}<ul><li>{{ x }}</li></ul>{% endfor %}</p></li>
+            <li><p><b>Course:</b> {{servant['course']}}</p></li>
+            <li><p><b>Note:</b> {{servant['note']}}</p></li>
+        </ul>
+-->
+
+    <hr class="my-5">
+  
+    <div class="row">
+      <div class="col-sm-6 col-lg-4 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is another card with title and supporting text below. This card has some additional content to make it slightly taller overall.</p>
+            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    </main>
+
+
+{% endblock %}
+
+
+
+
+

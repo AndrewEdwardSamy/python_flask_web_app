@@ -1,0 +1,119 @@
+
+{% extends "base.html"%}
+
+{% block content %}
+
+  <main class="main">
+    <section>
+      <h1>Add new entry</h1>
+      <form lang="ar" method="POST">
+
+        <p class="form__input">
+          <label for="fname" class="form__label">First name:</label>
+          <input type = "text" name="fname" id="fname" class="form__textarea">
+        </p>
+
+        <p class="form__input">
+          <label for="lname" class="form__label">Last name:</label>
+          <input type = "text" name="lname" id="lname" class="form__textarea">
+        </p>
+
+        <p class="form__input">
+          <label for="identity" class="form__label">Identity:</label>
+          <input type = "tel" name="identity" id="identity" class="form__textarea"><! -- pattern="[0-9]{14}" -->
+        </p>
+
+        <p class="form__input">
+          <label for="address" class="form__label">Address:</label>
+          <textarea name="address" id="address" class="form__textarea"></textarea>
+        </p>
+
+        <p class="form__input">
+          <label for="block" class="form__label">Block number:</label>
+          <input type = "number" name="block" id="block" class="form__textarea" ><! -- min="1" max="10" -->
+        </p>
+
+        <p class="form__input">
+          <label for="phone" class="form__label">Phone:</label>
+          <input type ="tel" name="phone" id="phone" class="form__textarea" placeholder="01234567890" ><! -- pattern="[0-9]{11}" -->
+        </p>
+
+        <p class="form__input">
+          <label for="whats" class="form__label">What's app phone:</label>
+          <input type ="tel" name="whats" id="whats" class="form__textarea" placeholder="01234567890" ><! -- pattern="[0-9]{11}" -->
+        </p>
+
+        <p class="form__input">
+          <label for="father_of_confession" class="form__label">Father of confession:</label>
+          <input type ="text" name="father_of_confession" id="father_of_confession" class="form__textarea">
+        </p>
+
+        <p class="form__input">
+          <label for="pre_graduation_year" class="form__label">Graduation year of servant preparation:</label>
+          <input type ="number" name="pre_graduation_year" id="pre_graduation_year" class="form__textarea" value="1990">
+        </p>
+        
+        <p class="form__input">
+          <label for="pre_grade" class="form__label">Grade of servant preparation:</label>
+          <input type ="number" name="pre_grade" id="pre_grade" class="form__textarea">
+        </p>
+
+        <p class="form__input">
+          <label for="pre_church" class="form__label">Church of servant preparation:</label>
+          <input type ="text" name="pre_church" id="pre_church" class="form__textarea">
+        </p>
+
+        <p>
+          <fieldset>
+          <label for="membership" class="form__label">Membership:</label><br>
+          <input type ="radio" name="membership" id="temporarily" class="form__textarea" value="temporarily"> Temporarily
+          <input type ="radio" name="membership" id="permanent" class="form__textarea" value="permanent"> Permanent
+          </fieldset>
+        </p>
+
+        <p>
+          <fieldset>
+          <label for="disc" class="form__label">DISC:</label><br>
+          <input type ="checkbox" name="D" id="disc" class="form__textarea" value = "D"> D
+          <input type ="checkbox" name="I" id="disc" class="form__textarea" value = "I"> I
+          <input type ="checkbox" name="S" id="disc" class="form__textarea" value = "S"> S
+          <input type ="checkbox" name="C" id="disc" class="form__textarea" value = "C"> C
+          </fieldset>
+        </p>
+
+        <p>
+          <fieldset>
+          <label for="intelligence_type" class="form__label">Intelligence type:</label><br>
+          {% for intelligence_type in intelligence_type_list %}
+          <input type ="checkbox" name='{{intelligence_type}}' class="form__textarea" value='{{intelligence_type}}'> {{intelligence_type}}
+          <br>
+          {% endfor %}
+          </fieldset>
+        </p>
+
+        <p>
+          <fieldset>
+          <label for="skill" class="form__label">Skill:</label><br>
+          {% for skill in skill_list %}
+          <input type ="checkbox" name="{{skill}}" class="form__textarea" value="{{skill}}"> {{skill}}
+          <br>
+          {% endfor %}
+          </fieldset>
+        </p>
+
+        <p class="form__input">
+          <label for="course" class="form__label">Course:</label>
+          <textarea name="course" id="course" class="form__textarea"></textarea>
+        </p>
+
+        <p class="form__input">
+          <label for="note" class="form__label">Note:</label>
+          <textarea name="note" id="note" class="form__textarea"></textarea>
+        </p>
+        
+        <button type="submit" class="form__submit">Add Servant</button>
+      </form>
+    </section>
+  </main>
+
+{% endblock %}

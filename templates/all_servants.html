@@ -1,0 +1,58 @@
+
+{% extends "base.html"%}
+
+{% block content %}
+
+
+<main class="container py-5">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <!-- <th>Last Name</th> -->
+      <!-- <th>Identity</th> -->
+      <!-- <th>Address</th> -->
+      <th>Block number</th>
+      <th>Phone number</th>
+      <th>What's number</th>
+      <!-- <th>Father of confession</th> -->
+      <th>Year</th> <!-- Graduation year of servant preparation -->
+      <th>Grade</th> <!-- Grade of servant preparation -->
+      <!-- <th>Church of servant preparation</th> -->
+      <th>Membership</th>
+      <th>DISC</th>
+      <th>Intelligence</th> <!-- types -->
+      <th>Skills</th>
+      <th>Course</th>
+      <!-- <th>Note</th> -->
+    </tr>
+    </thead>
+    
+    <tbody>
+    {% for servant in all_servants %}
+    <tr>
+      <td><a href="profile/{{servant['_id']}}">{{servant['fname']}} {{servant['lname']}}</a></td>
+      <!-- <td>{{servant['lname']}}</td> -->
+      <!-- <td>{{servant['identity']}}</td> -->
+      <!-- <td>{{servant['address']}}</td> -->
+      <td>{{servant['block']}}</td>
+      <td>{{servant['phone']}}</td>
+      <td>{{servant['whats']}}</td>
+      <!-- <td>{{servant['father_of_confession']}}</td> -->
+      <td>{{servant['pre_graduation_year']}}</td>
+      <td>{{servant['pre_grade']}}</td>
+      <!-- <td>{{servant['pre_church']}}</td> -->
+      <td>{{servant['membership']}}</td>
+      <td>{% for x in servant['disc'] %} {{ x }} <br> {% endfor %}</td>
+      <td>{% for x in servant['intelligence_type'] %} {{ x }} <br> {% endfor %}</td>
+      <td>{% for x in servant['skill'] %} {{ x }} <br> {% endfor %}</td>
+      <td>{{servant['course']}}</td>
+      <!-- <td>{{servant['note']}}</td> -->
+    </tr>
+    {% endfor %}
+    </tbody>
+    
+  </table>
+</main>
+
+{% endblock %}
